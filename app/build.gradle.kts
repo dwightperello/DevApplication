@@ -65,6 +65,7 @@ dependencies {
 
     //TEST
     testImplementation(libs.androidx.room.testing)
+    androidTestImplementation("com.microsoft.appcenter:espresso-test-extension:1.4")
 
 
 }
