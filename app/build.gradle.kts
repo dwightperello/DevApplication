@@ -55,7 +55,7 @@ dependencies {
 
     //app center
     implementation (libs.appcenter.analytics)
-    implementation ("com.microsoft.appcenter:appcenter-crashes:5.0.4")
+    implementation (libs.appcenter.crashes)
 
     //room
     implementation(libs.roomDep)
