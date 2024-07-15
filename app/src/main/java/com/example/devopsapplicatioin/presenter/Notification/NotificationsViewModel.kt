@@ -1,4 +1,4 @@
-package com.example.devopsapplicatioin.ui.notifications
+package com.example.devopsapplicatioin.presenter.Notification
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
