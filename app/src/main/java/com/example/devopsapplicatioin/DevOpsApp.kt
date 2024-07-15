@@ -11,7 +11,7 @@ class DevOpsApp : Application() {
     override fun onCreate() {
         super.onCreate()
         AppCenter.start(
-            this, "9618766f-b578-471c-8810-0e90958008af",
+            this, "75da5be4-4439-4541-8703-d4baa595fd9d",
             Analytics::class.java, Crashes::class.java
         )
     }
