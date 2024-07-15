@@ -1,5 +1,4 @@
-package com.example.devopsapplicatioin
-
+package com.example.devopsapplicatioin.presenter.Home
 
 import android.view.View
 import android.view.ViewGroup
@@ -12,57 +11,32 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
+import com.example.devopsapplicatioin.MainActivity
+import com.example.devopsapplicatioin.R
+import com.microsoft.appcenter.espresso.Factory
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
+import org.junit.After
+import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
 @LargeTest
-@RunWith(AndroidJUnit4::class)
-class HomeFragmentUITest {
-
+class HomeFragmentTest{
     @Rule
     @JvmField
     var mActivityScenarioRule = ActivityScenarioRule(MainActivity::class.java)
 
+    @JvmField
+    @Rule
+    var reportHelper = Factory.getReportHelper()
+
     @Test
-    fun homeFragmentUITest() {
+    fun mainActivityTest() {
         val bottomNavigationItemView = onView(
-            allOf(
-                withId(R.id.navigation_dashboard), withContentDescription("Dashboard"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(R.id.nav_view),
-                        0
-                    ),
-                    1
-                ),
-                isDisplayed()
-            )
-        )
-        bottomNavigationItemView.perform(click())
-
-        val bottomNavigationItemView2 = onView(
-            allOf(
-                withId(R.id.navigation_notifications), withContentDescription("Notifications"),
-                childAtPosition(
-                    childAtPosition(
-                        withId(R.id.nav_view),
-                        0
-                    ),
-                    2
-                ),
-                isDisplayed()
-            )
-        )
-        bottomNavigationItemView2.perform(click())
-
-        val bottomNavigationItemView3 = onView(
             allOf(
                 withId(R.id.navigation_home), withContentDescription("Home"),
                 childAtPosition(
@@ -75,7 +49,7 @@ class HomeFragmentUITest {
                 isDisplayed()
             )
         )
-        bottomNavigationItemView3.perform(click())
+        bottomNavigationItemView.perform(click())
 
         val textView = onView(
             allOf(
@@ -103,5 +77,10 @@ class HomeFragmentUITest {
                         && view == parent.getChildAt(position)
             }
         }
+    }
+
+    @After
+    fun teardown(){
+        reportHelper.label("finish")
     }
 }
