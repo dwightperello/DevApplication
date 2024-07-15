@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Analytics.trackEvent("HOME FRAGMENT STARTED FINAL")
+        Analytics.trackEvent("HOME FRAGMENT STARTED FINALs")
     }
 
     override fun onDestroyView() {
