@@ -1,6 +1,6 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android") 
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -51,4 +51,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //app center
+    implementation ("com.microsoft.appcenter:appcenter-analytics:5.0.4")
+    implementation ("com.microsoft.appcenter:appcenter-crashes:5.0.4")
 }
