@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -53,6 +54,17 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     //app center
-    implementation ("com.microsoft.appcenter:appcenter-analytics:5.0.4")
+    implementation (libs.appcenter.analytics)
     implementation ("com.microsoft.appcenter:appcenter-crashes:5.0.4")
+
+    //room
+    implementation(libs.roomDep)
+    annotationProcessor(libs.roomCompiler)
+    ksp(libs.roomCompiler)
+
+
+    //TEST
+    testImplementation(libs.androidx.room.testing)
+
+
 }
