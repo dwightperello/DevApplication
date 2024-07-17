@@ -89,18 +89,18 @@ dependencies {
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation("org.mockito:mockito-android:4.7.0")
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1")
-    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
-    androidTestImplementation("com.google.truth:truth:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation ("org.mockito:mockito-core:4.7.0")
-    androidTestImplementation ("com.google.dagger:hilt-android-testing:2.43.2")
-    kspAndroidTest ("com.google.dagger:hilt-android-compiler:2.48")
-    debugImplementation ("androidx.fragment:fragment-testing:1.7.0-alpha05")
+    androidTestImplementation(libs.mockito.android)
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.androidx.core.testing)
+    androidTestImplementation(libs.truth)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation (libs.mockito.core)
+    androidTestImplementation (libs.hilt.android.testing)
+    kspAndroidTest (libs.hilt.android.compiler)
+    debugImplementation (libs.androidx.fragment.testing)
 
-    
-    androidTestImplementation("com.microsoft.appcenter:espresso-test-extension:1.4")
+
+    androidTestImplementation(libs.espresso.test.extension)
 
 
 }
