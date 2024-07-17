@@ -2,6 +2,9 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
 }
 
 android {
@@ -61,6 +64,10 @@ dependencies {
     implementation(libs.roomDep)
     annotationProcessor(libs.roomCompiler)
     ksp(libs.roomCompiler)
+
+    //hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
 
     //TEST
