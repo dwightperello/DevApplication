@@ -1,4 +1,4 @@
-package com.example.devopsapplicatioin.ui.dashboard
+package com.example.devopsapplicatioin.presenter.dashboard
 
 import android.os.Bundle
 import android.view.LayoutInflater
