@@ -62,6 +62,8 @@ dependencies {
 
     //room
     implementation(libs.roomDep)
+    implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.roomwithcoroutineextensions)
     annotationProcessor(libs.roomCompiler)
     ksp(libs.roomCompiler)
 

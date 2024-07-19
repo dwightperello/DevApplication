@@ -1,9 +1,14 @@
 package com.example.devopsapplicatioin.di
 
+import android.app.Application
 import android.content.Context
+import com.example.devopsapplicatioin.data.local.DevOpsDatabase
+import com.example.devopsapplicatioin.data.local.dao.MaintItemDao
+import com.example.devopsapplicatioin.data.local.repository.MaintItemRepositoryImpl
 import com.example.devopsapplicatioin.data.remote.network.APIservice
 import com.example.devopsapplicatioin.data.remote.network.NetworkBuilder
 import com.example.devopsapplicatioin.data.remote.repository.mainItemRepositoryImpl
+import com.example.devopsapplicatioin.domain.local.repository.MainItemRepository
 import com.example.devopsapplicatioin.domain.remote.repository.maintItemRepository
 import dagger.Module
 import dagger.Provides
@@ -36,4 +41,21 @@ object ApplicationModule {
     @Provides
     @Singleton
     fun provideMainItemService(apIservice: APIservice): maintItemRepository = mainItemRepositoryImpl(apIservice)
+
+    //DATABASE
+    @Provides
+    @Singleton
+    fun provideDatabase(context: Application):DevOpsDatabase{
+        return DevOpsDatabase.getAppDB(context)
+    }
+
+    @Provides
+    @Singleton
+    fun providesServiceDao(DevOpsDatabase: DevOpsDatabase): MaintItemDao{
+        return DevOpsDatabase.providesMainItemName()
+    }
+
+    @Provides
+    @Singleton
+    fun providesMainItemRepo(maintItemDao: MaintItemDao) : MainItemRepository = MaintItemRepositoryImpl(maintItemDao)
 }
