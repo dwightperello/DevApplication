@@ -7,6 +7,8 @@ plugins {
     id("kotlin-parcelize")
     id("androidx.navigation.safeargs.kotlin")
 
+
+
 }
 
 android {
@@ -42,6 +44,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {

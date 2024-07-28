@@ -12,7 +12,6 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withParent
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.microsoft.appcenter.espresso.Factory
 import com.microsoft.appcenter.espresso.ReportHelper
@@ -23,7 +22,6 @@ import org.hamcrest.TypeSafeMatcher
 import org.junit.After
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
 @LargeTest
 //@RunWith(AndroidJUnit4::class)
@@ -35,7 +33,7 @@ class MainActivityTest2 {
 
     @Rule
     @JvmField
-    var helper = Factory.getReportHelper()
+    var reportHelper: ReportHelper? = Factory.getReportHelper()
 
     @Test
     fun mainActivityTest2() {
@@ -114,6 +112,6 @@ class MainActivityTest2 {
 
     @After
     fun teardown(){
-        helper.label("test")
+        reportHelper?.label("test")
     }
 }
