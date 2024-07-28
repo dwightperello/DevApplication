@@ -47,6 +47,8 @@ class getMainItemUseCaseTest {
         val dataItems = (results[1] as ResultState.Success).data
         assertTrue(dataItems is List<*>)
         assertTrue(dataItems!!.isNotEmpty())
+        val description = dataItems[0].description
+        assertEquals("Main item description 1",description)
 
 
     }
