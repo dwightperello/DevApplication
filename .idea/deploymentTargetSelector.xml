@@ -5,13 +5,7 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="homeFragmentUITest()">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="HomeFragmentUITest">
-        <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="HomeFragmentTest">
+      <SelectionState runConfigName="MainActivityTest2">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
